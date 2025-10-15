@@ -54,6 +54,12 @@ func NewFileInfo(path string, info os.FileInfo) *FileInfo {
                 ext = ext[1:] // Remove the dot
         }
         
+        // Safely check if file is hidden
+        isHidden := false
+        if len(info.Name()) > 0 {
+                isHidden = info.Name()[0] == '.'
+        }
+        
         return &FileInfo{
                 Name:      info.Name(),
                 Path:      path,
@@ -63,7 +69,7 @@ func NewFileInfo(path string, info os.FileInfo) *FileInfo {
                 Mode:      info.Mode().String(),
                 IsDir:     info.IsDir(),
                 Extension: ext,
-                Hidden:    info.Name()[0] == '.',
+                Hidden:    isHidden,
         }
 }
 
