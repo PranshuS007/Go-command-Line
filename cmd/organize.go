@@ -86,7 +86,7 @@ func runOrganize(cmd *cobra.Command, args []string) {
 		}
 	}
 	
-	// Perform actual organization
+	// Actually perform the organization
 	fmt.Println("\nOrganizing files...")
 	_, err = fileops.OrganizeFiles(dir, false)
 	checkError(err)
