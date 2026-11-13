@@ -3,7 +3,7 @@
 This file was created to demonstrate Git rebase functionality.
 
 ## What is Git Rebase?
-Rebase is a Git operation that moves or combines a sequence of commits 
+Rebase is a Git operation that moves or combines a sequence of commits
 to a new base commit. It's an alternative to merging.
 
 ## Benefits of Rebase:
